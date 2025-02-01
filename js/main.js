@@ -223,7 +223,7 @@ function calcDose() {
 }
 
 function calcInfRate() {
-    const value = (valueDose / valueVolume) / valueDose;
+    const value = (valueDose / valueVolume) / valueInfDose;
     return value;
 }
 
