@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icon.webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <div class="title-bar">
+            <img src="images/sun.webp">
+            <img id="icon-toggle" onclick="invertColor()" src="images/toggle.webp">
+            <img src="images/moon.webp" class="moon">
+        </div>
+
+        <div>
+            <label for="weight">Weight:</label>
+            <input class="input-field" id="weight" type="number" />
+            <label>kg</label>
+        </div>
+
+        <div>
+            <label for="dose">Dose in syringe:</label>
+            <input class="input-field" id="dose" type="number" />
+            <button class="btn dose-choices dark-mode" id="grams" onclick="chooseDose(event)">grams</button>
+            <button class="btn dose-choices light-mode" id="milligrams" onclick="chooseDose(event)">milligrams</button>
+            <button class="btn dose-choices light-mode" id="micrograms" onclick="chooseDose(event)">micrograms</button>
+            <button class="btn dose-choices light-mode" id="nanograms" onclick="chooseDose(event)">nanograms</button>
+        </div>
+
+        <div>
+            <label for="volume">Volume in syringe:</label>
+            <input class="input-field" id="volume" type="number" />
+            <label>mls</label>
+        </div>
+
+        <div>
+            <label for="inf-rate">Infusion rate</label>
+            <input class="input-field" id="inf-rate" type="number" />
+            <label>ml/hr</label>
+        </div>
+
+        <div>
+            <label for="inf-dose">Infusion dose:</label>
+            <input class="input-field" id="inf-dose" type="number" />
+            <button class="btn infusion-choices dark-mode" id="mg-kg-hr" onclick="chooseInfusion(event)">mg/kg/hr</button>
+            <button class="btn infusion-choices light-mode" id="mcg-kg-hr" onclick="chooseInfusion(event)">mcg/kg/hr</button>
+            <button class="btn infusion-choices light-mode" id="mcg-kg-min" onclick="chooseInfusion(event)">mcg/kg/min</button>
+        </div>
+
+    </form>
+</body>
+</html>
