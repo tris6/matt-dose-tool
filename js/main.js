@@ -29,12 +29,16 @@ function setDark() {
         btn.classList.remove('light-mode');
         btn.classList.add('dark-mode');
     })
-    const doseButton = document.getElementById(doseSelected);
-    doseButton.classList.remove('dark-mode');
-    doseButton.classList.add('light-mode');
-    const infusionButton = document.getElementById(infusionSelected.id);
-    infusionButton.classList.remove('dark-mode');
-    infusionButton.classList.add('light-mode');
+    if (doseSelected !== "") {
+        const doseButton = document.getElementById(doseSelected.id);
+        doseButton.classList.remove('dark-mode');
+        doseButton.classList.add('light-mode');
+    }
+    if (infusionSelected !== "") {
+        const infusionButton = document.getElementById(infusionSelected.id);
+        infusionButton.classList.remove('dark-mode');
+        infusionButton.classList.add('light-mode');
+    }
     
 
     input.forEach((field) => {
@@ -55,12 +59,16 @@ function setLight() {
         btn.classList.remove('dark-mode');
         btn.classList.add('light-mode');
     })
-    const doseButton = document.getElementById(doseSelected);
-    doseButton.classList.remove('light-mode');
-    doseButton.classList.add('dark-mode');
-    const infusionButton = document.getElementById(infusionSelected.id);
-    infusionButton.classList.remove('light-mode');
-    infusionButton.classList.add('dark-mode');
+    if (doseSelected !== "") {
+        const doseButton = document.getElementById(doseSelected.id);
+        doseButton.classList.remove('light-mode');
+        doseButton.classList.add('dark-mode');
+    }
+    if (infusionSelected !== "") {
+        const infusionButton = document.getElementById(infusionSelected.id);
+        infusionButton.classList.remove('light-mode');
+        infusionButton.classList.add('dark-mode');
+    }
 
     input.forEach((field) => {
         field.classList.remove('dark-mode');
@@ -74,8 +82,8 @@ function setLight() {
 
 const doseChoices = document.querySelectorAll('.dose-choices');
 const infusionChoices = document.querySelectorAll('.infusion-choices');
-let doseSelected;
-let infusionSelected;
+let doseSelected = "";
+let infusionSelected = "";
 
 function chooseDose(event) {
     doseSelected = document.getElementById(event.target.id);
@@ -93,9 +101,11 @@ function updateDoseColors() {
             dose.classList.remove('dark-mode');
             dose.classList.add('light-mode');
         })
-        const doseButton = document.getElementById(doseSelected.id);
-        doseButton.classList.remove('light-mode');
-        doseButton.classList.add('dark-mode');
+        if (doseSelected !== "") {
+            const doseButton = document.getElementById(doseSelected.id);
+            doseButton.classList.remove('light-mode');
+            doseButton.classList.add('dark-mode');
+        }
     }
 
     if (colorMode === "dark") {
@@ -103,9 +113,11 @@ function updateDoseColors() {
             dose.classList.remove('light-mode');
             dose.classList.add('dark-mode');
         })
-        const doseButton = document.getElementById(doseSelected.id);
-        doseButton.classList.remove('dark-mode');
-        doseButton.classList.add('light-mode');
+        if (doseSelected !== "") {
+            const doseButton = document.getElementById(doseSelected.id);
+            doseButton.classList.remove('dark-mode');
+            doseButton.classList.add('light-mode');
+        }
     }
 }
 
@@ -115,9 +127,11 @@ function updateInfusionColors() {
             infusion.classList.remove('dark-mode');
             infusion.classList.add('light-mode');
         })
-        const infusionButton = document.getElementById(infusionSelected.id);
-        infusionButton.classList.remove('light-mode');
-        infusionButton.classList.add('dark-mode');
+        if (doseSelected !== "") {
+            const infusionButton = document.getElementById(infusionSelected.id);
+            infusionButton.classList.remove('light-mode');
+            infusionButton.classList.add('dark-mode');
+        }
     }
 
     if (colorMode === "dark") {
@@ -125,8 +139,10 @@ function updateInfusionColors() {
             infusion.classList.remove('light-mode');
             infusion.classList.add('dark-mode');
         })
-        const infusionButton = document.getElementById(infusionSelected.id);
-        infusionButton.classList.remove('dark-mode');
-        infusionButton.classList.add('light-mode');
+        if (doseSelected !== "") {
+            const infusionButton = document.getElementById(infusionSelected.id);
+            infusionButton.classList.remove('dark-mode');
+            infusionButton.classList.add('light-mode');
+        }
     }
 }
