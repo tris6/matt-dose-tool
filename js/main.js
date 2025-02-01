@@ -146,3 +146,88 @@ function updateInfusionColors() {
         }
     }
 }
+
+/********************************************/
+
+const inputs = document.querySelectorAll('input');
+
+let inputWeight = document.getElementById('input-weight');
+let inputVolume = document.getElementById('input-volume');
+let inputDose = document.getElementById('input-dose');
+let inputInfRate = document.getElementById('input-inf-rate');
+let inputInfDose = document.getElementById('input-inf-dose');
+
+let valueWeight = inputWeight.value;
+let valueVolume = inputVolume.value;
+let valueDose = inputDose.value;
+let valueInfRate = inputInfRate.value;
+let valueInfDose = inputInfDose.value;
+
+function checkInputs(event) {
+    let count = 0;
+    inputs.forEach((input) => {
+        if (input.value !== "") count++;
+    })
+    
+    if (count === 4) {
+        updateFields();
+        inputs.forEach((input) => {
+            if (input.value === "") {
+                const blankField = input.id;
+                calcValue(blankField);
+            }
+        })
+    }
+}
+
+function updateFields() {
+    valueWeight = inputWeight.value;
+    valueVolume = inputVolume.value;
+    valueDose = inputDose.value;
+    valueInfRate = inputInfRate.value;
+    valueInfDose = inputInfDose.value;
+}
+
+function calcValue(blankField) {
+    let number = 0.0;
+    if (blankField === "input-dose") number = calcDose();
+    if (blankField === "input-inf-rate") number = calcInfRate();
+    if (blankField === "input-inf-dose") number = calcInfDose();
+    number = number.toFixed(2);
+    printValue(blankField, number);
+}
+
+function printValue(blankField, number) {
+    document.getElementById(blankField).value = number;
+
+    const originalColor = document.getElementById(blankField).style.backgroundColor;
+
+    document.getElementById(blankField).style.backgroundColor = 'lime';
+    document.getElementById(blankField).style.fontWeight = '700';
+
+    setTimeout(function() {
+        document.getElementById(blankField).style.backgroundColor = originalColor;
+        document.getElementById(blankField).style.fontWeight = '400';
+    }, 500);
+}
+
+function clearForm() {
+    inputs.forEach((input) => {
+        input.value = "";
+    })
+}
+
+function calcDose() {
+    const value = valueInfDose * valueInfRate * valueVolume;
+    return value;
+}
+
+function calcInfRate() {
+    const value = (valueDose / valueVolume) / valueDose;
+    return value;
+}
+
+function calcInfDose() {
+    const value = (valueDose / valueVolume) / valueWeight * valueInfRate;
+    return value;
+}

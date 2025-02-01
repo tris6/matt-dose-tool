@@ -34,19 +34,26 @@ button {
 
 .title-bar {
     display: flex;
-    justify-content: right;
+    justify-content: end;
+    align-items: center;
+    gap: 80px;
+}
+
+.color-icons {
+    display: flex;
+    height: fit-content;
     align-items: center;
     gap: 10px;
 }
 
-.title-bar img {
+.clear-form img, .color-icons img {
     width: 25px;
     height: 100%;
 }
 
 .title-bar .moon { width: 20px; }
 
-#icon-toggle, .btn {
+#icon-toggle, .btn, .clear-form {
     cursor: pointer;
 }
 
