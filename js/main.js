@@ -74,8 +74,8 @@ function setLight() {
 
 const doseChoices = document.querySelectorAll('.dose-choices');
 const infusionChoices = document.querySelectorAll('.infusion-choices');
-let doseSelected = "grams";
-let infusionSelected = "mg-kg-hr";
+let doseSelected;
+let infusionSelected;
 
 function chooseDose(event) {
     doseSelected = document.getElementById(event.target.id);
