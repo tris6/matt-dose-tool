@@ -29,7 +29,7 @@ function setDark() {
         btn.classList.remove('light-mode');
         btn.classList.add('dark-mode');
     })
-    const doseButton = document.getElementById(doseSelected.id);
+    const doseButton = document.getElementById(doseSelected);
     doseButton.classList.remove('dark-mode');
     doseButton.classList.add('light-mode');
     const infusionButton = document.getElementById(infusionSelected.id);
@@ -55,7 +55,7 @@ function setLight() {
         btn.classList.remove('dark-mode');
         btn.classList.add('light-mode');
     })
-    const doseButton = document.getElementById(doseSelected.id);
+    const doseButton = document.getElementById(doseSelected);
     doseButton.classList.remove('light-mode');
     doseButton.classList.add('dark-mode');
     const infusionButton = document.getElementById(infusionSelected.id);
