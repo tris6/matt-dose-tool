@@ -11,47 +11,65 @@
 </head>
 <body>
     <form id="form">
-        <div class="title-bar">
-            <div class="clear-form">
-                <img src="images/eraser.webp" onclick="clearForm()" />
-            </div>
-            <div class="color-icons">
-                <img src="images/sun.webp">
-                <img id="icon-toggle" onclick="invertColor()" src="images/toggle.webp">
-                <img src="images/moon.webp" class="moon">
-            </div>
+        <div class="clear-form">
+            <img src="images/eraser.webp" onclick="clearForm()" />
+        </div>
+        <div class="color-icons">
+            <img src="images/sun.webp">
+            <img id="icon-toggle" onclick="invertColor()" src="images/toggle.webp">
+            <img src="images/moon.webp" class="moon">
         </div>
 
-        <div>
+        <div class="label-weight">
             <label for="weight">Weight:</label>
+        </div>
+        <div class="input-weight">
             <input class="input-field" id="input-weight" type="number" onfocusout="checkInputs(event)" />
+        </div>
+        <div class="units-weight">
             <label>kg</label>
         </div>
 
-        <div>
+        <div class="label-volume">
             <label for="volume">Volume in syringe:</label>
+        </div>
+        <div class="input-volume">
             <input class="input-field" id="input-volume" type="number" onfocusout="checkInputs(event)" />
+        </div>
+        <div class="units-volume">
             <label>mls</label>
         </div>
 
-        <div>
+        <div class="label-dose">
             <label for="dose">Dose in syringe:</label>
+        </div>
+        <div class="input-dose">
             <input class="input-field" id="input-dose" type="number" onfocusout="checkInputs(event)" />
+        </div>
+        <div class="units-dose">
             <button class="btn dose-choices light-mode" id="grams" onclick="chooseDose(event)">grams</button>
             <button class="btn dose-choices light-mode" id="milligrams" onclick="chooseDose(event)">milligrams</button>
             <button class="btn dose-choices light-mode" id="micrograms" onclick="chooseDose(event)">micrograms</button>
             <button class="btn dose-choices light-mode" id="nanograms" onclick="chooseDose(event)">nanograms</button>
         </div>
 
-        <div>
+        <div class="label-infusion-rate">
             <label for="inf-rate">Infusion rate</label>
+        </div>
+        <div class="input-infusion-rate">
             <input class="input-field" id="input-inf-rate" type="number" onfocusout="checkInputs(event)" />
+        </div>
+        <div class="units-infusion-rate">
             <label>ml/hr</label>
         </div>
 
-        <div>
+        <div class="label-infusion-dose">
             <label for="inf-dose">Infusion dose:</label>
+        </div>
+        <div class="input-infusion-dose">
             <input class="input-field" id="input-inf-dose" type="number" onfocusout="checkInputs(event)" />
+        </div>
+        <div class="units-infusion-dose">
             <button class="btn infusion-choices light-mode" id="mg-kg-hr" onclick="chooseInfusion(event)">mg/kg/hr</button>
             <button class="btn infusion-choices light-mode" id="mcg-kg-hr" onclick="chooseInfusion(event)">mcg/kg/hr</button>
             <button class="btn infusion-choices light-mode" id="mcg-kg-min" onclick="chooseInfusion(event)">mcg/kg/min</button>

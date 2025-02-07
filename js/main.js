@@ -3,7 +3,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 })
 
-/********************************************/
+/* MAKE IT DARK/LIGHT */
 
 const iconToggle = document.getElementById('icon-toggle');
 const button = document.querySelectorAll('.btn');
@@ -78,7 +78,7 @@ function setLight() {
     iconToggle.classList.remove('rotate');
 }
 
-/********************************************/
+/* HANDLE BUTTONS */
 
 const doseChoices = document.querySelectorAll('.dose-choices');
 const infusionChoices = document.querySelectorAll('.infusion-choices');
@@ -190,10 +190,12 @@ function updateFields() {
 
 function calcValue(blankField) {
     let number = 0.0;
+    if (blankField === "input-weight") number = calcWeight();
+    if (blankField === "input-volume") number = calcVolume();
     if (blankField === "input-dose") number = calcDose();
     if (blankField === "input-inf-rate") number = calcInfRate();
     if (blankField === "input-inf-dose") number = calcInfDose();
-    number = number.toFixed(2);
+    if (countDecimals(number) > 4) number = number.toFixed(4);
     printValue(blankField, number);
 }
 
@@ -217,17 +219,33 @@ function clearForm() {
     })
 }
 
+function calcWeight() {
+    const value = (valueDose / valueVolume) * (valueInfRate / valueInfDose * 1000);
+    return value;
+}
+
+function calcVolume() {
+    const value = (valueDose * valueInfRate) / (valueInfDose * valueWeight / 1000);
+    return value;
+}
+
 function calcDose() {
-    const value = valueInfDose * valueInfRate * valueVolume;
+    const value = (valueInfDose * valueInfRate * valueVolume) / 50;
     return value;
 }
 
 function calcInfRate() {
-    const value = (valueDose / valueVolume) / valueInfDose;
+    const value = (valueDose / valueVolume) / (valueWeight * valueInfDose) * 1000;
     return value;
 }
 
 function calcInfDose() {
-    const value = (valueDose / valueVolume) / valueWeight * valueInfRate;
+    const value = (valueDose / valueVolume) / valueWeight * valueInfRate * 1000;
     return value;
+}
+
+function countDecimals(number) {
+    let decimalIndex = number.toString().indexOf(".");
+    decimalValue = number.toString().substring(decimalIndex + 1);
+    return decimalValue.length;
 }
