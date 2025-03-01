@@ -85,7 +85,7 @@ form {
 
 button {
     background-color: #fff;
-    color: black;
+    color: black !important;
     font-family: sans-serif;
     font-size: 11pt;
     
