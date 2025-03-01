@@ -105,14 +105,18 @@ button {
     border: 1px solid white;
 }
 
-/* Prevent Focus Scroll
+.section-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Prevent Focus Scroll */
 @keyframes input_opacity_prevent_scroll {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
   
 .input-field:focus { animation: input_opacity_prevent_scroll 0.01s; }
-*/
 
 
 
