@@ -3,11 +3,19 @@
     margin: 0;
 }
 
+html {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: start;
-    height: 60vh;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
     font-family: sans-serif;
 }
 
