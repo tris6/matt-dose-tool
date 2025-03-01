@@ -1,0 +1,21 @@
+Weight is always entered by user
+
+Volume in syringe could probably just always be entered by user
+
+Dose in syringe would be
+Infusion dose x infusion rate x volume in syringe
+
+Infusion rate would be
+(Dose in syringe / volume of syringe) x Infusion dose
+
+Infusion dose would be
+(Dose in syringe / volume of syringe) / weight * infusion rate
+
+This doesn’t include the unit changes of grams to micrograms and ml/hr to mcg/min
+Can do more on that, or layer in after we’ve got the above sorted?
+
+input-weight
+input-volume
+input-dose
+input-inf-rate
+input-inf-dose
