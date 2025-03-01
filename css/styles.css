@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
-    height: fit-content;
+    height: 60vh;
     font-family: sans-serif;
 }
 
