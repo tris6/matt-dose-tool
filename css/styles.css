@@ -17,6 +17,7 @@ body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     font-family: sans-serif;
+    font-size: 12pt;
 }
 
 form {
@@ -85,9 +86,11 @@ form {
 button {
     background-color: #fff;
     color: black;
+    font-family: sans-serif;
+    font-size: 11pt;
+    
     border: 1px solid black;
     border-radius: 5px;
-    margin-right: 5px;
 }
 
 .light-mode {
