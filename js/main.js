@@ -249,3 +249,8 @@ function countDecimals(number) {
     decimalValue = number.toString().substring(decimalIndex + 1);
     return decimalValue.length;
 }
+
+/* PREVENT SCROLL */
+setTimeout(function() {
+    window.scrollTo(x, y);
+}, 0);
