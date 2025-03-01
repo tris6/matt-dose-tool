@@ -99,7 +99,7 @@ button {
     100% { opacity: 1; }
 }
   
-.input:focus { animation: input_opacity_prevent_scroll 0.01s; }
+input:focus { animation: input_opacity_prevent_scroll 0.01s; }
 
 
 
